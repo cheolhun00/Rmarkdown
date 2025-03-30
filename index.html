@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> HTML에 CSS디자인을 적용한 실습 웹페이지</title>
-    <link rel="stylesheet" href="실습style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>안녕하세요 !</h1>
-        <p>"HTML과 Markdown이란?"포스트의 실습 결과물입니다.</p>
-        <button class="styled-button">클릭하세요</button>
-    </div>
-</body>
-</html>
+---
+title: "Flexdashboard 예제"
+output: flexdashboard::flex_dashboard
+---
+
+Column {data-width=650}
+-------------------------------------
+
+
+```{r}
+library(ggplot2)
+ggplot(mtcars, aes(x=mpg, y=hp, color=factor(cyl))) +
+    geom_point()
+```
+
+Column {data-width=350}
+-------------------------------------
+
+
+```{r}
+library(DT)
+datatable(mtcars)
+```
